@@ -50,8 +50,13 @@ export class Board {
     updateCell(index, mark) {
         const cell = this.boardElement.querySelector(`[data-index="${index}"]`);
         if (cell) {
-            cell.innerHTML = `<i class="${mark}"></i>`;
-            cell.removeAttribute('data-unclicked');
+            // Create a new <i> element with the mark and the "mark-clone" class
+            const icon = document.createElement('i');
+            icon.className = `${mark} mark-clone`; // Add both the mark and "mark-clone" classes
+            cell.innerHTML = ''; // Clear the cell content
+            cell.appendChild(icon); // Append the new icon
+            cell.removeAttribute('data-unclicked'); // Disable further clicks
+            console.log(`Cell ${index} updated with mark ${mark}`); // Debug line
         }
     }
 

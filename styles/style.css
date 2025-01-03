@@ -15,14 +15,20 @@
     --cream: #FFDDD2;
   }
   
-  #body {
+  body {
     background-color: #3B418B;
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Quicksand', sans-serif;
     font-size: 20px;
-    color: var(--white);
+    color: var(--white);    
+    min-width: fit-content; /* Ensure the body expands to fit its content */
+    min-height: auto;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    overflow-y:auto;
   }
+ 
+  
   .sky {
     background-image: url('../images/sky.jpg'); /* Default body background image */
   }
@@ -275,6 +281,10 @@
   }
   
   /* PLAYGAME WINDOW STYLING */
+  #game-selection-window,
+  #game-window {
+    min-width: 100vw; /* Ensure these containers take up at least the full viewport width */
+  }
   #game-window {
     margin-top: 60px;
   }
